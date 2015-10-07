@@ -41,7 +41,7 @@ public class CSurferTokenJar
 	{
 		for (AntiCSRFToken antiCSRFToken : tokens) 
 		{			
-			if(antiCSRFToken.sessionID.equals(sessionID))
+			if(antiCSRFToken.sessionID!= null && antiCSRFToken.sessionID.equals(sessionID))
 			{
 				// Someone requested the token, so we'll lock it until it is updated again or timed out
 				try 

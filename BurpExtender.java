@@ -189,7 +189,7 @@ public class BurpExtender implements IHttpListener, ITab {
 				String currentTokenValue = this.latestAntiCSRFTokens.GetToken(sessionID);
 												
 				//If Anti-CSRF token is incorrect and we have a newer value, then correct it
-				if(currentTokenValue != null && !parameter.getValue().equals(this.latestAntiCSRFTokens))
+				if(currentTokenValue != null && !parameter.getValue().equals(currentTokenValue))
 				{
 					IParameter newParameter = myhelpers.buildParameter(
 							parameter.getName(), currentTokenValue, parameter.getType());
