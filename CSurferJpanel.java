@@ -36,7 +36,7 @@ public class CSurferJpanel extends JPanel
 		maxSessionsLabel.setLabelFor(maxSessionsTextField);
 		
 		this.tokenNameTextField = new JTextField("", 20);
-		JLabel tokenNameLabel = new JLabel("Anti CSRF token field name");
+		JLabel tokenNameLabel = new JLabel("Anti CSRF token field name in requests");
 		tokenNameLabel.setLabelFor(tokenNameTextField);
 		
 		this.sessionIDTextField = new JTextField("", 20);
@@ -44,7 +44,7 @@ public class CSurferJpanel extends JPanel
 		sessionIDLabel.setLabelFor(sessionIDTextField);
 		
 		this.tokenResponseRegexTextField = new JTextField("", 20);
-		JLabel tokenResponseRegexLabel = new JLabel("Regex expression for matching the AntiCSRF token");
+		JLabel tokenResponseRegexLabel = new JLabel("Regex expression for matching the AntiCSRF token in responses");
 		tokenResponseRegexLabel.setLabelFor(tokenResponseRegexTextField);
 						
 		this.tokenMatchGroupTextField = new JTextField("", 20);
@@ -79,7 +79,7 @@ public class CSurferJpanel extends JPanel
 		this.maxSessionsTextField.setText("100");
 		this.tokenNameTextField.setText("TOKEN");
 		this.sessionIDTextField.setText("SESSIONID");
-		this.tokenResponseRegexTextField.setText("\\.TOKEN\".*value=\"(.*?)\">");
+		this.tokenResponseRegexTextField.setText("TOKEN\".*?value=\"(.*?)\".*?>");
 		this.tokenMatchGroupTextField.setText("1");
 		
 	}
