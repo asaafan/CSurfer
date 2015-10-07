@@ -29,7 +29,11 @@ public class AntiCSRFToken
 		while(retries < AntiCSRFToken.MAX_LOCK_RETRIES)
 		{
 			if(!isTokenBeingUsed)
+			{
+				// Lock token
+				this.isTokenBeingUsed = true;	
 				return;
+			}
 			else
 			{			
 				Thread.sleep(AntiCSRFToken.SLEEP_TIME_MS);

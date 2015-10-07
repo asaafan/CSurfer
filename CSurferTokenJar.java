@@ -22,9 +22,10 @@ public class CSurferTokenJar
 			if (sessionID.equals(antiCSRFToken.sessionID))
 			{
 				//A new value is received for the token, 
-				//so now we remove the lock and it can be used again
-				antiCSRFToken.ReleaseToken();;
 				antiCSRFToken.tokenValue = tokenValue;
+				//so now we remove the lock and it can be used again
+				antiCSRFToken.ReleaseToken();
+				
 				return AntiCSRFTokenStatus.TOKEN_UPDATED;
 			}									
 		}
